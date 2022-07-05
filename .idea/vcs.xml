@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/Dowy" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Dpad" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/OnboardingTooltips" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/android-app" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/android-tv-program-guide" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/example-tv-app" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/kick-start-android" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/simple-tool-tip" vcs="Git" />
+  </component>
+</project>
