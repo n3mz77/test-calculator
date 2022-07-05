@@ -1,4 +1,4 @@
-package com.example.examplecalculator.plus
+package com.example.examplecalculator.multiply
 
 import android.os.Bundle
 import android.util.Log
@@ -10,18 +10,16 @@ import android.widget.TextView
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import com.example.examplecalculator.R
+import com.example.examplecalculator.minus.MinusViewModel
 
-class PlusFragment : Fragment() {
-    private val mPlusViewModel: PlusViewModel by activityViewModels()
-    private var number1: Number? = null
-    private var number2: Number? = null
-
+class MultiplyFragment : Fragment() {
+    private val mMultiplyViewModel: MultiplyViewModel by activityViewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mPlusViewModel.calculate(requireActivity())
-        mPlusViewModel.valueResult.observe(requireActivity(), Observer {
-            Log.d("PlusViewModel", "get value $it")
-            val result: TextView? = view?.findViewById(R.id.result_plus)
+        mMultiplyViewModel.calculate(requireActivity())
+        mMultiplyViewModel.valueResult.observe(requireActivity(), Observer {
+            Log.d("MultiplyViewModel", "get value $it")
+            val result: TextView? = view?.findViewById(R.id.result_multiply)
             result?.text = it.toString()
         })
     }
@@ -30,10 +28,7 @@ class PlusFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_plus, container, false)
-
-        return view
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_multiply, container, false)
     }
-
-
 }

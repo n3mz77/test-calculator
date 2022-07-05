@@ -21,20 +21,36 @@
         android:id="@+id/fragment_plus"
         android:name="com.example.examplecalculator.plus.PlusFragment"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="120dp"
         tools:layout="@layout/fragment_plus" />
 
     <fragment
         android:id="@+id/fragment_minus"
         android:name="com.example.examplecalculator.minus.MinusFragment"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="120dp"
         tools:layout="@layout/fragment_minus" />
+
+    <fragment
+        android:id="@+id/fragment_multiply"
+        android:name="com.example.examplecalculator.multiply.MultiplyFragment"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        tools:layout="@layout/fragment_multiply" />
+
+    <fragment
+        android:id="@+id/fragment_divide"
+        android:name="com.example.examplecalculator.divide.DivideFragment"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        tools:layout="@layout/fragment_divide" />
+
 
     <Button
         android:id="@+id/result_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:visibility="gone"
         android:text="Update"/>
 </LinearLayout>

@@ -19,19 +19,20 @@ class MainActivity : AppCompatActivity() {
     private var number1: Number = 0
     private var number2: Number = 0
     private val mPlusViewModel: PlusViewModel by viewModels()
+    var  timer: CountDownTimer? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val btnUpdate :Button = findViewById(R.id.result_update)
         btnUpdate.setOnClickListener {
-            Log.d("check result ", "${mPlusViewModel.calculate(number1, number2)}")
+            //Log.d("check result ", "${mPlusViewModel.calculate(number1, number2)}")
         }
 
         start()
     }
 
     private fun start() {
-        val timer = object: CountDownTimer(10000, 1000) {
+        timer = object: CountDownTimer(10000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 count = count.plus(1)
                 Log.d("test", "count $count")
@@ -47,11 +48,10 @@ class MainActivity : AppCompatActivity() {
                 updateRandom(random1, random2)
                 Log.d("test", "finish $count random $random1 & random $random2 ")
                 count = 0
-
-                start()
+                timer?.start()
             }
         }
-        timer.start()
+        timer?.start()
     }
 
     private fun updateRandom(number1: Number, number2: Number) {
@@ -60,6 +60,6 @@ class MainActivity : AppCompatActivity() {
         num1.text = number1.toString()
         num2.text = number2.toString()
 
-        Model().updateValue(number1, number2)
+        Model.updateValue(number1, number2)
     }
 }

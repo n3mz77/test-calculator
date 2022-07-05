@@ -4,7 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Project/Android/example/app/src/main/res/layout/activity_main.xml" value="0.18565400843881857" />
+        <entry key="..\:/Project/Android/example/app/src/main/res/layout/fragment_devide.xml" value="0.16614583333333333" />
+        <entry key="..\:/Project/Android/example/app/src/main/res/layout/fragment_divide.xml" value="0.16041666666666668" />
         <entry key="..\:/Project/Android/example/app/src/main/res/layout/fragment_minus.xml" value="0.12135416666666667" />
+        <entry key="..\:/Project/Android/example/app/src/main/res/layout/fragment_multiply.xml" value="0.15208333333333332" />
         <entry key="..\:/Project/Android/example/app/src/main/res/layout/fragment_plus.xml" value="0.11369509043927649" />
       </map>
     </option>

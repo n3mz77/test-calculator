@@ -3,18 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".plus.PlusFragment"
-    android:background="#62EACF"
+    tools:context=".minus.MinusFragment"
+    android:background="#E1DD95"
     android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="40sp"
-        android:text="+" />
+        android:text="/" />
 
     <TextView
-        android:id="@+id/result_plus"
+        android:id="@+id/result_divide"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
