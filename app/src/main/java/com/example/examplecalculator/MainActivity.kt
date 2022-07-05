@@ -12,48 +12,28 @@ import androidx.activity.viewModels
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import com.example.examplecalculator.plus.PlusViewModel
+import java.util.*
 import java.util.logging.Logger
 
 class MainActivity : AppCompatActivity() {
-    private var count: Int = 0
-    private var number1: Number = 0
-    private var number2: Number = 0
-    private val mPlusViewModel: PlusViewModel by viewModels()
-    var  timer: CountDownTimer? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val btnUpdate :Button = findViewById(R.id.result_update)
-        btnUpdate.setOnClickListener {
-            //Log.d("check result ", "${mPlusViewModel.calculate(number1, number2)}")
-        }
 
-        start()
-    }
-
-    private fun start() {
-        timer = object: CountDownTimer(10000, 1000) {
-            override fun onTick(millisUntilFinished: Long) {
-                count = count.plus(1)
-                Log.d("test", "count $count")
+        Timer().schedule(object: TimerTask() {
+            override fun run() {
+                Log.d("schedule", "task call")
+                runOnUiThread{
+                    Model.nextNumber1()
+                    Model.nextNumber2()
+                    val num1 = Model.getNumber1().value
+                    val num2 = Model.getNumber2().value
+                    updateRandom(num1!!, num2!!)
+                }
             }
+        }, 0L, 10000L)
 
-            override fun onFinish() {
-                //calculate
-                val random1 = (0..100).shuffled().last()
-                val random2 = (0..100).shuffled().last()
-                number1 = random1
-                number2 = random2
-
-                updateRandom(random1, random2)
-                Log.d("test", "finish $count random $random1 & random $random2 ")
-                count = 0
-                timer?.start()
-            }
-        }
-        timer?.start()
     }
-
     private fun updateRandom(number1: Number, number2: Number) {
         val num1:TextView = findViewById(R.id.tv_number1)
         val num2:TextView = findViewById(R.id.tv_number2)

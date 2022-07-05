@@ -13,17 +13,15 @@ import com.example.examplecalculator.R
 
 class PlusFragment : Fragment() {
     private val mPlusViewModel: PlusViewModel by activityViewModels()
-    private var number1: Number? = null
-    private var number2: Number? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        mPlusViewModel.calculate(requireActivity())
-        mPlusViewModel.valueResult.observe(requireActivity(), Observer {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        mPlusViewModel.getResult(requireActivity()).observe(requireActivity(), Observer {
             Log.d("PlusViewModel", "get value $it")
-            val result: TextView? = view?.findViewById(R.id.result_plus)
+            val result: TextView? = view.findViewById(R.id.result_plus)
             result?.text = it.toString()
         })
+
     }
 
     override fun onCreateView(
